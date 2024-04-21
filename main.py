@@ -6,6 +6,7 @@ from datetime import datetime
 
 from dotenv import load_dotenv
 from telegram import Bot
+from telegram.error import TelegramError
 
 # Load environment values
 dotenv_path = join(dirname(__file__), '.env')
@@ -49,7 +50,13 @@ def get_year_progress():
 async def send_message(text):
     """Send message to user."""
     async with bot:
-        await bot.send_message(chat_id=CHAT_ID, text=text)
+        try:
+            await bot.send_message(chat_id=CHAT_ID, text=text)
+            print("Message sent successfully!")
+            print(text)
+        except (ValueError, TelegramError) as e:
+            print("An exception occurred", e)
+
 
 if __name__ == "__main__":
     YEAR_PROGRESS = get_year_progress()
