@@ -1,3 +1,7 @@
+# Python year progress bot in telegram
+
+This is the example repository for [medium article. (Sending scheduled Telegram bot messages with Python script using Docker and crontab)](https://medium.com/@matas109/sending-scheduled-telegram-bot-messages-with-python-script-using-docker-and-crontab-12c9349ac0f1)
+
 # Getting started
 
 ## Environment variables
